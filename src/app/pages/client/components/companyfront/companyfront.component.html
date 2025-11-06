@@ -1,0 +1,29 @@
+<div class="prediction-form-container">
+    <div class="form-wrapper">
+      <h3>Prédiction du Score Final</h3>
+      <div class="form-field" (mouseover)="onHoverField('moyenBac', true)" (mouseout)="onHoverField('moyenBac', false)">
+        <label for="moyenBac">Moyen Bac :</label>
+        <input type="number" id="moyenBac" [(ngModel)]="formData.moyenBac" placeholder="Entrez votre moyenne" />
+      </div>
+      <div class="form-field" (mouseover)="onHoverField('natureBac', true)" (mouseout)="onHoverField('natureBac', false)">
+        <label for="natureBac">Nature du Bac :</label>
+        <select id="natureBac" [(ngModel)]="formData.natureBac">
+          <option value="" disabled selected>Sélectionnez</option>
+          <option value="Littéraire">Littéraire</option>
+          <option value="Scientifique">Scientifique</option>
+          <option value="Économique">Économique</option>
+          <option value="Technique">Technique</option>
+        </select>
+      </div>
+     
+      <div class="form-field" (mouseover)="onHoverField('resultat', true)" (mouseout)="onHoverField('resultat', false)">
+        <label for="resultat">Résultat :</label>
+        <select id="resultat" [(ngModel)]="formData.resultat">
+          <option value="" disabled selected>Sélectionnez</option>
+          <option value="Admis">Admis</option>
+          <option value="Non Admis">Non Admis</option>
+        </select>
+      </div>
+      <button (click)="predict()">Prédire</button>
+    </div>
+  </div>

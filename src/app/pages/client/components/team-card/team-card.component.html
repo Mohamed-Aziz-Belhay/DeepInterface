@@ -1,0 +1,21 @@
+
+<div class="footer-section">
+    <div class="container">
+      <div class="footer-content pt-5 pb-1">
+        <div class="row">
+          
+        <div class="dynamic-card-section">
+          <h2 class="team-title">Our Team</h2>
+          <div class="card-container">
+            <div class="rectangle" *ngFor="let rect of rectangles" (click)="openLinkedIn(rect)" [ngStyle]="rect.style">
+              <img [src]="rect.image" class="rectangle-image" alt="{{ rect.text }}" />
+              <span class="rectangle-text">{{ rect.text }}</span>
+            </div>
+          </div>
+        </div>
+     
+
+
+    </div>
+</div>
+</div>

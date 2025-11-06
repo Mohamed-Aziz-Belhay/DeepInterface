@@ -1,0 +1,99 @@
+$primary-bg: #ffffff;
+$primary-bg-hover: #f5f5f5;
+$shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+$shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.15);
+$transition: all 0.3s ease;
+$input-border: #ccc;
+$input-border-hover: #888;
+$button-bg: #28a745;
+$button-bg-hover: #218838;
+$text-color: #333;
+$label-color: #555;
+
+.prediction-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+
+  .form-wrapper {
+    background-color: $primary-bg;
+    border-radius: 12px;
+    box-shadow: $shadow;
+    padding: 30px;
+    width: 100%;
+    max-width: 450px;
+    transition: $transition;
+
+    h3 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 1.8rem;
+      color: $text-color;
+      font-weight: 600;
+    }
+
+    .form-field {
+      margin-bottom: 20px;
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: $label-color;
+        font-size: 1rem;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid $input-border;
+        border-radius: 6px;
+        font-size: 1rem;
+        transition: $transition;
+        background-color: #fff;
+
+        &:focus {
+          outline: none;
+          border-color: $input-border-hover;
+          box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+        }
+      }
+
+      select {
+        appearance: none;
+        background: url('data:image/svg+xml;utf8,<svg fill="gray" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
+        background-size: 16px;
+      }
+
+      &:hover {
+        input,
+        select {
+          border-color: $input-border-hover;
+          background-color: $primary-bg-hover;
+        }
+      }
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: $button-bg;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: $transition;
+
+      &:hover {
+        background-color: $button-bg-hover;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}

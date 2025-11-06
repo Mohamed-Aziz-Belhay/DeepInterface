@@ -1,0 +1,26 @@
+<div class="prediction-form-container">
+    <div class="form-wrapper">
+      <h3>Prédiction du Résultat</h3>
+  
+      <!-- Premier champ : Moyen Bac -->
+      <div class="form-field" (mouseover)="onHoverField('moyenBac', true)" (mouseout)="onHoverField('moyenBac', false)">
+        <label for="moyenBac">Moyenne Bac :</label>
+        <input type="number" id="moyenBac" [(ngModel)]="formData.moyenBac" placeholder="Entrez votre moyenne du Bac" />
+      </div>
+  
+      <!-- Deuxième champ : Score final -->
+      <div class="form-field" (mouseover)="onHoverField('scoreFinal', true)" (mouseout)="onHoverField('scoreFinal', false)">
+        <label for="scoreFinal">Score Final :</label>
+        <input type="number" id="scoreFinal" [(ngModel)]="formData.scoreFinal" placeholder="Entrez votre score final" />
+      </div>
+  
+      <!-- Bouton prédiction -->
+      <button (click)="predict()">Prédire</button>
+  
+    </div>
+  </div>
+  
+
+
+
+

@@ -1,0 +1,107 @@
+<div class="blank-layout-container justify-content-center align-items-center bg-light-primary">
+    <div class="position-relative row w-100 h-100 bg-gredient justify-content-center">
+      <div class="col-lg-6 d-flex align-items-center">
+        <mat-card class="cardWithShadow boxed-auth">
+          <mat-card-content class="p-32">
+            <div class="text-center">
+              <a [routerLink]="['/home']">
+                <img
+                  src="./assets/images/logos/aa.png"
+                  class="align-middle m-2 img-fluid"
+                  alt="logo"
+                  style="width: 50%;"
+                />
+              </a>
+            </div>
+  
+            <div class="or-border m-t-30">Contact Us</div>
+  
+            <form [formGroup]="contactForm" (ngSubmit)="submit()" class="m-t-30">
+              <div class="row">
+                <!-- First Name -->
+                <div class="col-md-6">
+                  <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">
+                    <mat-icon class="icon">person</mat-icon> First Name
+                  </mat-label>
+                  <mat-form-field appearance="outline" class="w-100" color="primary">
+                    <input matInput formControlName="firstName" required />
+                    <mat-error *ngIf="contactForm.get('firstName')?.hasError('required')">
+                      First Name is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+  
+                <!-- Last Name -->
+                <div class="col-md-6">
+                  <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">
+                    <mat-icon class="icon">person</mat-icon> Last Name
+                  </mat-label>
+                  <mat-form-field appearance="outline" class="w-100" color="primary">
+                    <input matInput formControlName="lastName" required />
+                    <mat-error *ngIf="contactForm.get('lastName')?.hasError('required')">
+                      Last Name is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+  
+              <div class="row">
+                <!-- Mobile -->
+                <div class="col-md-6">
+                  <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">
+                    <mat-icon class="icon">phone</mat-icon> Mobile Number
+                  </mat-label>
+                  <mat-form-field appearance="outline" class="w-100" color="primary">
+                    <input matInput formControlName="mobile" required />
+                    <mat-error *ngIf="contactForm.get('mobile')?.hasError('required')">
+                      Mobile Number is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+  
+                <!-- Email -->
+                <div class="col-md-6">
+                  <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">
+                    <mat-icon class="icon">email</mat-icon> Email Address
+                  </mat-label>
+                  <mat-form-field appearance="outline" class="w-100" color="primary">
+                    <input matInput type="email" formControlName="email" required />
+                    <mat-error *ngIf="contactForm.get('email')?.hasError('required')">
+                      Email is required
+                    </mat-error>
+                    <mat-error *ngIf="contactForm.get('email')?.hasError('email')">
+                      Please enter a valid email
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+  
+              <!-- Message -->
+              <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">Message</mat-label>
+              <mat-form-field appearance="outline" class="w-100" color="primary">
+                <textarea matInput rows="4" formControlName="message" required></textarea>
+                <mat-error *ngIf="contactForm.get('message')?.hasError('required')">
+                  Message is required
+                </mat-error>
+              </mat-form-field>
+  
+              <!-- Captcha -->
+              <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">Security Code</mat-label>
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <span class="bg-secondary text-white p-2 rounded">{{ captchaCode }}</span>
+                <button mat-stroked-button color="accent" type="button" (click)="generateCaptcha()">Refresh</button>
+              </div>
+              <mat-form-field appearance="outline" class="w-100" color="primary">
+                <input matInput formControlName="captchaInput" required />
+                <mat-error *ngIf="contactForm.get('captchaInput')?.hasError('required')">
+                  Security Code is required
+                </mat-error>
+              </mat-form-field>
+  
+              <button type="submit" mat-flat-button color="primary" class="w-100">Send Message</button>
+            </form>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>

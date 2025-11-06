@@ -1,0 +1,29 @@
+
+<div class="footer-section">
+    <div class="container">
+      <div class="footer-content pt-5 pb-1">
+        <div class="row">
+          
+  
+  
+          <div class="main-card" id="mission">
+            <h2>Sponsores</h2>
+            <div class="carousel-wrapper">
+              <div class="carousel" #carousel>
+                <div class="sub-card" *ngFor="let card of cards">
+                  <img [src]="card.img" [alt]="card.title" />
+                  <p><strong>{{ card.title }}</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+  
+  
+  
+        </div>
+      </div>
+    </div>
+  
+    
+  </div>
